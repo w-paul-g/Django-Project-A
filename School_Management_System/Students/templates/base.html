@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>base</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css">
+    <!--        <link rel="stylesheet" href="../../static/styles.css">-->
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="align-content: space-evenly">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)">Student Management System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="mynavbar" style="padding-right: 100px;">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">LINK</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">Link</a>
+                </li>
+            </ul>
+        </div>
+        <div class="button">
+            <a href="signup.html">
+                <button class="text-center text-white bg-black" style="">ENROLL</button>
+            </a>
+        </div>
+        <!--<form class="d-flex">-->
+            <!--<input class="form-control me-2" type="text" placeholder="Search">-->
+            <!--<button class="btn btn-primary" type="button">Search</button>-->
+        <!--</form>-->
+    </nav>
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+<footer class="bg-dark text-white" style="height: 50px; text-align: center; padding-top: 10px">
+    <p>Online Examination System</p>
+</footer>
+
+{% load static %}
+<script src="{% static 'bootstrap-5.3.2-dist/js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
