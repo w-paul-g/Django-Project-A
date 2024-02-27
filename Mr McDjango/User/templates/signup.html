@@ -17,9 +17,10 @@
 
 {% block content %}
 
-<form action="">
+<form action="" method="POST">
+    {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Sign Up" class="submit">
+    <button type="submit">SIGN IN</button>
 </form>
 
 {% endblock %}

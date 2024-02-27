@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import RegisterForm
+from .forms import RegisterForm, RegistrationForm
 
 
 # Create your views here.
@@ -9,7 +9,13 @@ def index(request):
 
 
 def signup(request):
-    form = RegisterForm()
+    form = RegistrationForm
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = RegistrationForm()
     return render(request, 'signup.html', {'form': form})
 
 
@@ -22,7 +28,8 @@ def logout(request):
 
 
 def signin(request):
-    return render(request, 'signin.html')
+    form = RegisterForm()
+    return render(request, 'signin.html', {'form': form})
 
 
 def about(request):
