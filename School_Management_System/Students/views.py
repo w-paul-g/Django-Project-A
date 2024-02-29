@@ -1,6 +1,8 @@
-from django.shortcuts import render, messages
+from django.shortcuts import render, redirect
 
 from Students.forms import StudentForm, StudentComplains, AdmissionForm
+
+from django.contrib import messages
 
 
 # Create your views here.
@@ -30,5 +32,6 @@ def admission(request):
             form.save()
             form = AdmissionForm
             messages.success(request, 'Welcome')
+            return redirect('index')
     return render(request, 'admission.html', {'form': form})
 
