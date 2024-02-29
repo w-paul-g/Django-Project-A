@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import RegisterForm, RegistrationForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -14,6 +15,10 @@ def signup(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
+            form = RegistrationForm
+            messages.success(request, 'Registration Complete')
+            # return redirect('index')
+
     else:
         form = RegistrationForm()
     return render(request, 'signup.html', {'form': form})
@@ -42,3 +47,6 @@ def contact(request):
 
 def gallery(request):
     return render(request, 'gallery.html')
+
+
+

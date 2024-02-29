@@ -1,5 +1,5 @@
 from django import forms
-from Students.models import Contact
+from Students.models import Contact, StudentDetail
 
 
 class StudentForm(forms.Form):
@@ -14,3 +14,16 @@ class StudentComplains(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ['name', 'email', 'message']
+
+
+class AdmissionForm(forms.ModelForm):
+    # surname = forms.CharField(label='Enter your Surname')
+    first_name = forms.CharField(label='Enter your First Name')
+    last_name = forms.CharField(label='Enter your Last Name')
+    age = forms.NumberInput()
+    date_of_birth = forms.DateInput()
+
+    class Meta:
+        model = StudentDetail
+        fields = ['first_name', 'last_name', 'age', 'date_of_birth']
+

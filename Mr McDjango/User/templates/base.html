@@ -8,18 +8,89 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
-<body class="p-3 mb-2 bg-black text-white">
-
+<body class="p-3 mb-2 bg-white text-black">
+<!--<body>-->
 <header>
+    <div class="row">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-1">
+                    <a class="navbar-brand" href="javascript:void(0)">McDjango</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse col-9 col-sm-9 col-md-5 col-lg-6 col-xl-6 col-xxl-7" id="mynavbar">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'index' %}">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact'%}">CONTACT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'gallery' %}">GALLERY</a>
+                            </li>
+                        </ul>
+                    <div class="col-0 col-sm-0 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="text" placeholder="Search">
+                            <button class="btn btn-primary" type="button">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
 </header>
-<section class="Navigation">
-    <button class="border border-0 rounded-1 bg-black text-white">HOME</button>
-    <button class="border border-0 rounded-1 bg-black text-white">ABOUT US</button>
-    <button class="border border-0 rounded-1 bg-black text-white">CONTACT</button>
-    <button class="border border-0 rounded-1 bg-black text-white">REGISTER</button>
-</section>
+
+<!--<nav class="navbar navbar-expand-sm navbar-dark bg-dark">-->
+<!--     <div class="container-fluid">-->
+<!--        <a class="navbar-brand" href="javascript:void(0)"></a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse bg-black border border-0 text-white" id="mynavbar" style="display: flex">-->
+<!--            <ul type="none">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href=></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href=""></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href=""></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href=""></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="{% url 'signup' %}">REGISTER</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="{% url 'signin' %}">SIGN IN</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+
+<!--     </div>-->
+<!--</nav>-->
 <hr>
+
+{% if  messages %}
+
+    {% for message in messages %}
+
+        <p>{{message}}</p>
+
+    {% endfor %}
+
+{% endif %}
+
 {% block heading %}
 
 {% endblock %}

@@ -17,7 +17,7 @@
 
 {% block content %}
 
-<form action="" method="POST">
+<form action="" method="POST" style="width: 60%; text-align: center">
     {% csrf_token %}
     {{form.as_p}}
     <button type="submit">SIGN IN</button>
