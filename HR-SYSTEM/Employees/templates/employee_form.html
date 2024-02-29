@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="../../static/stylesheets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/stylesheets/styles.css">
+</head>
+<body>
+{% extends 'base.html' %}
+{% block heading %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-1 col-sm-2 col-md-3 col-lg-4 col-xl-4 col-xxl-4"></div>
+    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="SAVE">
+        </form>
+    </div>
+    <div class="col-1 col-sm-2 col-md-3 col-lg-4 col-xl-4 col-xxl-4"></div>
+</div>
+{% endblock %}
+
+<script src="../../static/stylesheets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
