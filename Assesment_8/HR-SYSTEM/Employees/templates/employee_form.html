@@ -18,15 +18,15 @@
 
 <h1>Form</h1>
 <div class="row">
-    <div class=""></div>
-    <div class="">
+    <div class="col-1 col-sm-2 col-md-3 col-lg-4 col-xl-4 col-xxl-4"></div>
+    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
         <form action="" method="POST">
             {% csrf_token %}
             {{form.as_p}}
             <input type="submit" value="SAVE">
         </form>
     </div>
-    <div class=""></div>
+    <div class="col-1 col-sm-2 col-md-3 col-lg-4 col-xl-4 col-xxl-4"></div>
 </div>
 
 {% endblock %}
