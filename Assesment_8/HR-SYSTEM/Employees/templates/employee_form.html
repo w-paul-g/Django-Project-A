@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap-5.3.2-dist/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <link rel="stylesheet" href="../../static/js/bootstrap-5.3.2-dist/bootstrap.min.js">
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block heading %}
+
+{% endblock %}
+
+{% block content %}
+
+<h1>Form</h1>
+<div class="row">
+    <div class=""></div>
+    <div class="">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="SAVE">
+        </form>
+    </div>
+    <div class=""></div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>
