@@ -1,19 +1,37 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
+
 from Employees.forms import EmployeeForm
+from Employees.models import Employee
 
 
 # Create your views here.
-def employee_form(request):
+
+
+def employeeform(request, id=0):
     if request.method == 'GET':
-        form = EmployeeForm()
+        if id == 0:
+            form = EmployeeForm
+        else:
+            employee = Employee.objects.get(pk=id)
+            form = EmployeeForm(instance=employee)
         return render(request, 'employee_form.html', {'form': form})
     else:
-        form = EmployeeForm(request.POST)
+        if id == 0:
+            form = EmployeeForm(request.POST)
+        else:
+            employee = Employee.objects.get(pk=id)
+            form = EmployeeForm(request.POST, instance=employee)
         if form.is_valid():
             form.save()
-            return redirect('employee_form')
+            return redirect('/employees/employeelist/')
 
 
-def employee_list(request):
-    return render(request, 'employee_list.html')
+def employeelist(request):
+    context = {'employee_list': Employee.objects.all()}
+    return render(request, 'employee_list.html', context)
+
+
+def employee_delete(request, id):
+    employee = Employee.objects.get(pk=id)
+    employee.delete()
+    return redirect('/employees/employeelist/')
