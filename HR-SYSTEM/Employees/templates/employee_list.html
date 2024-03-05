@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,50 +13,47 @@
 {% block heading %}
 
 <h1>Employee List</h1>
-<h2>This is the records stored or saved about the company's employees  </h2>
 
 {% endblock %}
 
 {% block content %}
-<div></div>
-<div></div>
-<div></div>
-<table width="100%">
-    <thead>
-        <tr>
-            <td>Full Name</td>
-            <td>Email</td>
-            <td>Emp Code</td>
-            <td>Mobile</td>
-            <td>Position</td>
-            <td>
-
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-
-    {% for Employee in employee_list %}
-
-        <tr>
-
-            <td>{{Employee.fullname}}</td>
-            <td>{{Employee.email}}</td>
-            <td>{{Employee.emp_code}}</td>
-            <td>{{Employee.mobile_no}}</td>
-            <td>{{Employee.position}}</td>
-            <td>
-                <a href="{% url 'employee_update' employee.id %}"><button>UPDATE</button></a>
-                <a href="{% url 'employee_delete' employee.id %}"><button>DELETE</button></a>
-            </td>
-
-        </tr>
-
-    {% endfor %}
-
-    </tbody>
-</table>
-
+<section>
+    <h2>This is the records stored or saved about the company's employees  </h2>
+    <div class="row">
+        <div class="col-lg-1 col-xl-1 col-xxl-1"></div>
+        <div class="col-lg-10 col-xl-10 col-xxl-10">
+            <table width="100%" style="margin: 10px 10px">
+                <thead>
+                    <tr>
+                        <td>Full Name</td>
+                        <td>Email</td>
+                        <td>Emp Code</td>
+                        <td>Mobile</td>
+                        <td>Position</td>
+                        <td>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for Employee in employee_list %}
+                    <tr>
+                        <td>{{Employee.fullname}}</td>
+                        <td>{{Employee.email}}</td>
+                        <td>{{Employee.emp_code}}</td>
+                        <td>{{Employee.mobile_no}}</td>
+                        <td>{{Employee.position}}</td>
+                        <td>
+                            <a href="{% url 'employee_update' Employee.id %}"><button>UPDATE</button></a>
+                            <a href="{% url 'employee_delete' Employee.id %}"><button>DELETE</button></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class=col-lg-1 col-xl-1 col-xxl-1"></div>
+    </div>
+</section>
 {% endblock %}
 
 <script src="../../static/stylesheets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
