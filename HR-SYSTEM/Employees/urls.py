@@ -20,7 +20,7 @@ from Employees import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('employeeform/', views.employeeform, name='employeeform'),
+    path('employeeform/', views.employeeform, name='employee_form'),
     path('employeelist/', views.employeelist, name='employee_list'),
     path('<int:id>/', views.employeeform, name='employee_update'),
     path('delete/<int:id>/', views.employee_delete, name='employee_delete'),

@@ -1,5 +1,5 @@
 *{
-    width: 100%;
+    /*width: 100%;*/
     margin: 0;
     padding: 0;
 }
@@ -8,15 +8,31 @@ body{
     background-color: black;
     width: 100%;
 }
+h1, h2{
+    text-align: center;
+}
 hr{
     color: white;
 }
 form{
     width: 100%;
+    padding: 10px 10px;
 }
-form input-box input{
+.form-control{
     color: white;
-    background-color: black;
+    background-color: transparent;
     border: none;
-    border-bottom-style: solid;
+    border-bottom: 1px solid white;
+
 }
+.form-control::placeholder{
+    color: white;
+}
+.form-control input{
+    color: white;
+    background-color: transparent;
+}
+.table-container {
+    align-content: center;
+    width: 300%;
+    }

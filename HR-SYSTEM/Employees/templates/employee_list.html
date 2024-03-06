@@ -20,9 +20,10 @@
 <section>
     <h2>This is the records stored or saved about the company's employees  </h2>
     <div class="row">
-        <div class="col-lg-1 col-xl-1 col-xxl-1"></div>
-        <div class="col-lg-10 col-xl-10 col-xxl-10">
-            <table width="100%" style="margin: 10px 10px">
+        <div class="col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
+        <div class="col-md-10 col-lg-10 col-xl-10 col-xxl-10">
+            <a href="{% url 'employee_form' %}"><button>ADD NEW EMPLOYEES</button></a>
+            <table border="2" style="border-color: white">
                 <thead>
                     <tr>
                         <td>Full Name</td>
@@ -51,7 +52,7 @@
                 </tbody>
             </table>
         </div>
-        <div class=col-lg-1 col-xl-1 col-xxl-1"></div>
+        <div class="col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
     </div>
 </section>
 {% endblock %}

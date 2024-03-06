@@ -11,8 +11,5 @@ class Employee(models.Model):
     mobile_no = models.CharField(max_length=30)
     position = models.CharField(max_length=60)
 
-    def objects(self):
-        return self
-
     def __str__(self):
         return self.fullname
